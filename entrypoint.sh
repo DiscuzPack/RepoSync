@@ -11,12 +11,12 @@ git clone https://gitee.com/Discuz/DiscuzX.git --verbose
 
 # Add Mirror Repo Configure
 cd DiscuzX
-git remote add dxct git@github.com:DiscuzPack/DiscuzX.git --verbose
+git remote add dxct git@github.com:DiscuzPack/DiscuzX.git
 
 # Push Mirror Repo
-git checkout master --verbose
+git checkout master
 git push dxct master --force --verbose
-git checkout v3.5 --verbose
+git checkout v3.5
 git push dxct v3.5 --force --verbose
 
 # TODO: Success Callback
