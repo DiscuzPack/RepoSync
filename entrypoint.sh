@@ -20,18 +20,20 @@ export GIT_TRACE_SHALLOW=2
 # Show Running Command
 set -x
 
-# Pull Upstream Repo
-git clone https://gitee.com/Discuz/DiscuzX.git --verbose
+# Pull Cache Repo
+git clone git@github.com:DiscuzPack/DiscuzX.git --verbose
 
-# Add Mirror Repo Configure
+# Add Upstream Repo Configure
 cd DiscuzX
-git remote add dxct git@github.com:DiscuzPack/DiscuzX.git
+git remote add upstream https://gitee.com/Discuz/DiscuzX.git
 
-# Push Mirror Repo
+# Merge & Re-Push Mirror Repo
 git checkout master
-git push dxct master --force --verbose
+git pull upstream master --force --verbose
+git push origin master --force --verbose
 git checkout v3.5
-git push dxct v3.5 --force --verbose
+git pull upstream v3.5 --force --verbose
+git push origin v3.5 --force --verbose
 
 # TODO: Success Callback
 
