@@ -11,6 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Sync Upstream Repos For Packaging
-      uses: DiscuzPack/RepoSync
+      uses: DiscuzPack/RepoSync@master
       with:
         private_key: ${{ secrets.PRIVATE_KEY }}
