@@ -1,0 +1,16 @@
+on:
+  workflow_dispatch:
+  schedule:
+    # GitHub Actions 最短 5 分钟执行一次, 这里暂时选用 10 分钟, 后续根据运营情况继续调整
+    - cron: '0,10,20,30,40,50 * * * *'
+
+name: Sync Upstream Repos For Packaging
+jobs:
+  run:
+    name: Sync Upstream Repos For Packaging
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sync Upstream Repos For Packaging
+      uses: DiscuzPack/RepoSync
+      with:
+        private_key: ${{ secrets.PRIVATE_KEY }}

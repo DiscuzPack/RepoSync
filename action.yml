@@ -1,0 +1,15 @@
+name: "Gitee Sync Action"
+description: "Mirror the Discuz! X Repos to GitHub"
+author: "Discuz! X Community Team"
+branding:
+  icon: "upload-cloud"
+  color: "gray-dark"
+inputs:
+  private_key:
+    description: "The Private SSH key which is used to to push code in GitHub."
+    required: true
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.private_key }}
