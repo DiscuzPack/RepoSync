@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Input SSH Key
 mkdir -p /root/.ssh
