@@ -1,25 +1,26 @@
 #!/bin/sh
 
-# Show Running Command
-set -x
-
 # Input SSH Key
 mkdir -p /root/.ssh
 echo "${INPUT_PRIVATE_KEY}" > /root/.ssh/id_rsa
 chmod 600 /root/.ssh/id_rsa
+mkdir -p /root/repo
+cd /root/repo
 
 # Git Debug Mode
-GIT_TRACE=2
-GIT_CURL_VERBOSE=2
-GIT_TRACE_PERFORMANCE=2
-GIT_TRACE_PACK_ACCESS=2
-GIT_TRACE_PACKET=2
-GIT_TRACE_PACKFILE=2
-GIT_TRACE_SETUP=2
-GIT_TRACE_SHALLOW=2
+export GIT_TRACE=2
+export GIT_CURL_VERBOSE=2
+export GIT_TRACE_PERFORMANCE=2
+export GIT_TRACE_PACK_ACCESS=2
+export GIT_TRACE_PACKET=2
+export GIT_TRACE_PACKFILE=2
+export GIT_TRACE_SETUP=2
+export GIT_TRACE_SHALLOW=2
+
+# Show Running Command
+set -x
 
 # Pull Upstream Repo
-mkdir -p /root/repo/
 git clone https://gitee.com/Discuz/DiscuzX.git --verbose
 
 # Add Mirror Repo Configure
