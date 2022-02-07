@@ -1,8 +1,8 @@
-# GitHub Actions 最短 5 分钟执行一次, 考虑到 10 分钟调度不到这里改用 30 分钟, 后续根据运营情况继续调整
+# 考虑到本仓库日常不更新, GitHub Actions 改为 API 触发
 on:
-  workflow_dispatch:
-  schedule:
-    - cron: '*/30 * * * *'
+  repository_dispatch:
+    types:
+      - UpstreamRepoSync
 
 name: Sync Upstream Repos For Packaging
 jobs:
