@@ -25,12 +25,14 @@ cd DiscuzX
 git remote add upstream https://gitee.com/Discuz/DiscuzX.git
 
 # Merge & Re-Push Mirror Repo
+git fetch -p upstream
 git checkout master
 git pull upstream master --force --verbose
 git push origin master --force --verbose
 git checkout v3.5
 git pull upstream v3.5 --force --verbose
 git push origin v3.5 --force --verbose
+git push origin --tags
 
 # TODO: Success Callback
 
