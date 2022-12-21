@@ -17,6 +17,9 @@ export GIT_TRACE_SHALLOW=2
 # Show Running Command
 set -x
 
+# Set Fast Forward Only
+git config pull.ff only
+
 # Pull Cache Repo
 git clone git@github.com:DiscuzPack/DiscuzX.git --verbose
 
