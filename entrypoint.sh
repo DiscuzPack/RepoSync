@@ -17,15 +17,15 @@ export GIT_TRACE_SHALLOW=2
 # Show Running Command
 set -x
 
-# Set Fast Forward Only
-git config pull.ff only
-
 # Pull Cache Repo
 git clone git@github.com:DiscuzPack/DiscuzX.git --verbose
 
 # Add Upstream Repo Configure
 cd DiscuzX
 git remote add upstream https://gitee.com/Discuz/DiscuzX.git
+
+# Set Fast Forward Only
+git config pull.ff only
 
 # Merge & Re-Push Mirror Repo
 git fetch -p upstream
